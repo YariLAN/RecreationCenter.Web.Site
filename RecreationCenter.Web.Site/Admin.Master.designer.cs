@@ -87,6 +87,15 @@ namespace Relax.Web.Site
         protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
 
         /// <summary>
+        /// LinkButton7 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
+
+        /// <summary>
         /// ContentPlaceHolder1 элемент управления.
         /// </summary>
         /// <remarks>

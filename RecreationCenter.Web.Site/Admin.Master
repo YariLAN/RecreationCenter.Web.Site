@@ -134,6 +134,11 @@
                             <td border="1" style=" background: beige;" width="50%" align="center">
                                 <asp:LinkButton BackColor="Beige" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Заявки клиентов</asp:LinkButton>
                             </td>
+                        </tr>                        
+                        <tr>
+                            <td border="1" style=" background: beige;" width="50%" align="center">
+                                <asp:LinkButton BackColor="Beige" ID="LinkButton7" runat="server" OnClick="LinkButton6_Click">Журнал занятости</asp:LinkButton>
+                            </td>
                         </tr>
                     </table>
                  </div>

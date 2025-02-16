@@ -41,6 +41,11 @@ namespace Relax.Web.Site
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
             Response.Redirect("ApplicationClientsManagement.aspx");
+        }    
+
+        protected void LinkButton6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("JournalEmployment.aspx");
         }
     }
 }
