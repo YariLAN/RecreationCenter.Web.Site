@@ -57,7 +57,7 @@ namespace Cinema.Web.Site
 
             string insertSQL = "INSERT INTO Client " +
                 "(ID_Client, Surname, NumberPhone, login, password, IsAdmin, FirstName, Email) " +
-             $"VALUES (NEWID(), '{surname}', '{phone}', '{login}', '{password}', '0' '{name}', '{email}')";
+             $"VALUES (NEWID(), '{surname}', '{phone}', '{login}', '{password}', '0', '{name}', '{email}')";
 
             var resultUpdated = SqlUtils.ExecuteNotQuery(insertSQL);                        
 
