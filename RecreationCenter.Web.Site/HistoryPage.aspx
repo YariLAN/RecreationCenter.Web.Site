@@ -11,19 +11,19 @@
     <div class="form-container">
         <h4>История заявок</h4>
         <p style="text-align: center;">
-            <asp:GridView 
-                ID="HistoryGridView" 
-                runat="server" 
+            <asp:GridView
+                ID="HistoryGridView"
+                runat="server"
                 HorizontalAlign="Center"
-                CellPadding="8" 
-                BorderWidth="2" 
+                CellPadding="8"
+                BorderWidth="2"
                 ForeColor="#996633"
                 BackColor="White"
                 EditRowStyle-BackColor="#ffccff"
                 AlternatingRowStyle-BackColor="#ffccff"
                 RowStyle-BackColor="#ffccff"
-                AllowSorting="True" 
-                AutoGenerateColumns="False" 
+                AllowSorting="True"
+                AutoGenerateColumns="False"
                 DataKeyNames="ID_order"
                 OnSelectedIndexChanged="ApplicationGridView_SelectedIndexChanged">
                 <Columns>
@@ -44,10 +44,10 @@
             </asp:GridView>
         </p>
         <p>
-            <asp:DetailsView ID="ApplicationDetails" runat="server" 
-                AutoGenerateRows="False" 
-                DataKeyNames="ID_Cotage"  
-                Height="50px" 
+            <asp:DetailsView ID="ApplicationDetails" runat="server"
+                AutoGenerateRows="False"
+                DataKeyNames="ID_Cotage"
+                Height="50px"
                 Width="500px"
                 CellPadding="8"
                 HorizontalAlign="Center">
@@ -65,11 +65,11 @@
             </asp:DetailsView>
         </p>
         <p style="text-align: center;">
-            <asp:GridView ID="AdditionalServiceGridView" runat="server" 
+            <asp:GridView ID="AdditionalServiceGridView" runat="server"
                 HorizontalAlign="Center"
-                CellPadding="8" 
-                BorderWidth="2" 
-                ForeColor="#66ffff" 
+                CellPadding="8"
+                BorderWidth="2"
+                ForeColor="#66ffff"
                 BackColor="White"
                 AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID_More">
                 <Columns>

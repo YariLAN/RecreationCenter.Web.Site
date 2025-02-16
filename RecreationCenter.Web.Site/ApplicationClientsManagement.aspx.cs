@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Reflection;
 using System.Web.UI.WebControls;
 
 namespace Cinema.Web.Site
@@ -115,8 +116,8 @@ namespace Cinema.Web.Site
                 var reader = SqlUtils.CleanExecuteReader(getOrderDetails);
                 OrdersDetails.DataSource = reader;
                 OrdersDetails.DataBind();
-            });                
-            
+            });
+
             SqlUtils.CompleteConnect(() =>
             {
                 var reader = SqlUtils.CleanExecuteReader(getClientDetails);
@@ -124,11 +125,11 @@ namespace Cinema.Web.Site
                 ClientDetails.DataBind();
             });
 
+            JournalCheckPanel.Visible = false;
             Label1.Visible = true;
             ClientLabel.Visible = true;
             Button3.Visible = (list.Rows[list.SelectedIndex].Cells[11].Text == "В обработке" );
 
-            JournalCheckPanel.Visible = false;
         }
 
         protected void CloseDropDown_Click(object sender, EventArgs e)
@@ -136,8 +137,8 @@ namespace Cinema.Web.Site
             if (Session["UserId"] == null)
                 return;
 
-        }            
-        
+        }
+
         protected void JournalCheck_Click(object sender, EventArgs e)
         {
             if (Session["UserId"] == null)
@@ -150,7 +151,7 @@ namespace Cinema.Web.Site
             DateTime startDate = DateTime.ParseExact(startDateStr + " " + startTimeStr, "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
 
             // Извлекаем дату и время выезда
-            string endDateStr = GridViewOrders.Rows[index].Cells[5].Text; // Дата окончания            
+            string endDateStr = GridViewOrders.Rows[index].Cells[5].Text; // Дата окончания
             string endTimeStr = GridViewOrders.Rows[index].Cells[6].Text; // Время окончания
             DateTime endDate = DateTime.ParseExact(endDateStr + " " + endTimeStr, "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
 
@@ -159,8 +160,8 @@ namespace Cinema.Web.Site
             var name = GridViewOrders.Rows[index].Cells[2].Text;
 
             // Проверяем занятость коттеджа
-            CheckCottageAvailability(cottageId, 
-                startDate.ToString("yyyy-dd-MM HH:mm:ss.fff", CultureInfo.InvariantCulture), 
+            CheckCottageAvailability(cottageId,
+                startDate.ToString("yyyy-dd-MM HH:mm:ss.fff", CultureInfo.InvariantCulture),
                 endDate.ToString("yyyy-dd-MM HH:mm:ss.fff", CultureInfo.InvariantCulture),
                 name);
 
@@ -214,6 +215,31 @@ namespace Cinema.Web.Site
                 GridViewBlockDatesAvailability.DataSource = reader;
                 GridViewBlockDatesAvailability.DataBind();
             });
+        }
+
+        protected void Order_Update(object sender, EventArgs e)
+        {
+            if (Session["UserId"] == null)
+                return;
+
+            var statusGuid = DropDownList_Status.SelectedItem.Value;
+            var orderID = (Guid)GridViewOrders.SelectedValue;
+
+            var sqlUpdate = $"UPDATE Orders SET ID_Status = '{statusGuid}', Comment = '{CommentBox.Text ?? ""}' WHERE ID_order = '{orderID}';";
+
+            var resultUpd = SqlUtils.ExecuteNotQuery(sqlUpdate);
+
+            if (resultUpd > 0)
+            {
+                Session["LabelMessage"] = $"Заявка получила статус '{DropDownList_Status.SelectedItem.Text}' !";
+                Response.Redirect(Request.RawUrl);
+            }
+            else
+            {
+                ErrorLabel.Visible = true;
+                ErrorLabel.Text = "Ошибка обновления. Попробуйте снова";
+                return;
+            }
         }
     }
 }

@@ -11,27 +11,31 @@
             border-radius: 5px; /* Скругленные края */
             transition: 0.3s ease-in-out; /* Анимация при наведении */
         }
-    
+
         .styled-add-button:hover {
             background-color: #45a049; /* Темнее на hover */
         }
-    
+
         .form-container {
             text-align: center;
         }
-    
+
         .form-table {
             margin: 0 auto;
             padding: 10px;
             border-collapse: separate;
             border-spacing: 10px;
         }
-    
+
         .form-label {
             font-weight: bold;
             text-align: right;
         }
-    
+
+        .label-margin {
+            margin-right: 15px;
+        }
+
         .form-input {
             width: 330px;
             padding: 5px;
@@ -45,7 +49,7 @@
             font-style: italic;
             opacity: 1;
         }
-    
+
         .form-error {
             color: #FF3300;
             font-size: 12px;
@@ -55,19 +59,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <h4 style="text-align: center;">Заявки на бронь коттеджа</h4>
      <p style="text-align: center;">
-        <asp:GridView 
-            ID="GridViewOrders" 
-            runat="server" 
+        <asp:GridView
+            ID="GridViewOrders"
+            runat="server"
             HorizontalAlign="Center"
-            CellPadding="8" 
-            BorderWidth="2" 
+            CellPadding="8"
+            BorderWidth="2"
             ForeColor="#996633"
             BackColor="White"
             EditRowStyle-BackColor="#ffccff"
             AlternatingRowStyle-BackColor="#ffccff"
             RowStyle-BackColor="#ffccff"
-            AllowSorting="True" 
-            AutoGenerateColumns="False" 
+            AllowSorting="True"
+            AutoGenerateColumns="False"
             DataKeyNames="ID_order"
             OnSelectedIndexChanged="OrderGridView_SelectedIndexChanged">
             <Columns>
@@ -90,10 +94,10 @@
         <asp:Label runat="server" ID="Label1" Visible="false" Text="Данные заявки"></asp:Label>
     </p>
     <p style="text-align: center;">
-        <asp:DetailsView ID="OrdersDetails" runat="server" 
-            AutoGenerateRows="False" 
-            DataKeyNames="ID_order"  
-            Height="50px" 
+        <asp:DetailsView ID="OrdersDetails" runat="server"
+            AutoGenerateRows="False"
+            DataKeyNames="ID_order"
+            Height="50px"
             Width="500px"
             CellPadding="8"
             HorizontalAlign="Center">
@@ -115,10 +119,10 @@
         <asp:Label runat="server" ID="ClientLabel" Visible="false" Text="Данные о клиенте"></asp:Label>
     </p>
     <p style="text-align: center;">
-        <asp:DetailsView ID="ClientDetails" runat="server" 
-            AutoGenerateRows="False" 
-            DataKeyNames="ID_Client"  
-            Height="50px" 
+        <asp:DetailsView ID="ClientDetails" runat="server"
+            AutoGenerateRows="False"
+            DataKeyNames="ID_Client"
+            Height="50px"
             Width="500px"
             CellPadding="8"
             HorizontalAlign="Center">
@@ -136,11 +140,15 @@
 
     <asp:Panel CssClass="form-container" runat="server" ID="JournalCheckPanel" Visible="false">
         <h3 style="text-align: center;">Занятость через Orders</h3>
-        
-        <asp:GridView 
-            ID="GridViewOrdersAvailability" 
-            runat="server" 
+
+        <asp:GridView
+            ID="GridViewOrdersAvailability"
+            runat="server"
             HorizontalAlign="Center"
+            CellPadding="8"
+            BorderWidth="2"
+            ForeColor="#996633"
+            BackColor="White"
             AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="ID_order" HeaderText="ID заказа" />
@@ -149,13 +157,17 @@
                 <asp:BoundField DataField="ClientName" HeaderText="Клиент" />
             </Columns>
         </asp:GridView>
-        
+
 
         <h3 style="text-align: center;">Занятость через BlockDates</h3>
-        <asp:GridView 
-            ID="GridViewBlockDatesAvailability" 
-            runat="server" 
+        <asp:GridView
+            ID="GridViewBlockDatesAvailability"
+            runat="server"
             HorizontalAlign="Center"
+            CellPadding="8"
+            BorderWidth="2"
+            ForeColor="#996633"
+            BackColor="White"
             AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="ID_Cotage" HeaderText="Номер коттеджа" />
@@ -164,6 +176,24 @@
                 <asp:BoundField DataField="Reason" HeaderText="Причина" />
             </Columns>
         </asp:GridView>
-    </asp:Panel>
 
+        <p style="text-align: center;">Как оформить заявку?</p>
+        <div style="text-align: center;">
+            <asp:DropDownList  runat="server"  BackColor="White" ID="DropDownList_Status" DataTextField="type" DataValueField="type" Height="18px" Width="141px">
+                <asp:ListItem Text="Принято" Value="8E3AD1B6-1953-47F1-A06D-E3950D596EA6" />
+                <asp:ListItem Text="Отказано" Value="9A969056-72C0-4ECD-8B97-55C7C5B87AE3" />
+            </asp:DropDownList>
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px;">
+                <asp:Label runat="server" CssClass="label-margin" Text="Комментарий"/>
+                <asp:TextBox TextMode="MultiLine" runat="server" ID="CommentBox" Height="63px" Width="359px" />
+            </div>
+            <p>
+                <asp:Button  BackColor="White" ForeColor="Black" ID="Button2" runat="server" Text="Оформить" OnClick="Order_Update"/>
+            </p>
+        </div>
+
+        <p style="text-align: center;">
+            <asp:Label ID="ErrorLabel" Visible="false" ForeColor="Red" runat="server"></asp:Label>
+        </p>
+    </asp:Panel>
 </asp:Content>
