@@ -34,11 +34,17 @@ namespace Cinema.Web.Site
         {
             Response.Redirect("AdditionalServices.aspx");
         }
+
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Cottages.aspx");
-        }        
-        
+        }
+
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Feadbacks.aspx");
+        }
+
         protected void RegisterRedirect(object sender, EventArgs e)
         {
             Response.Redirect("RegisterPage.aspx");
@@ -77,7 +83,7 @@ namespace Cinema.Web.Site
             SqlUtils.CompleteConnect(() =>
             {
                 var reader = SqlUtils.CompleteCommand(getUser);
-                
+
                 if (reader != null)
                 {
                     id = reader.GetGuid(0);
@@ -86,7 +92,7 @@ namespace Cinema.Web.Site
                     isAdmin = reader.GetBoolean(5);
                 }
             });
- 
+
             if (id is null || passwordDb != password)
             {
                 LabelMessage.Text = "Неверный логин или пароль";

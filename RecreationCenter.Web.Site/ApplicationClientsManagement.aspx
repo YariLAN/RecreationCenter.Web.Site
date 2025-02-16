@@ -13,7 +13,7 @@
         }
 
         .styled-add-button:hover {
-            background-color: #45a049; /* Темнее на hover */
+            background-color: #45a049;
         }
 
         .form-container {

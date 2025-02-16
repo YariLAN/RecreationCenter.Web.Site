@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Feadbacks.aspx" />
     <Content Include="PriceListManagement.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="ApplicationClientsManagement.aspx" />
@@ -79,6 +80,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Feadbacks.aspx.cs">
+      <DependentUpon>Feadbacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feadbacks.aspx.designer.cs">
+      <DependentUpon>Feadbacks.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PriceListManagement.aspx.cs">
       <DependentUpon>PriceListManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
