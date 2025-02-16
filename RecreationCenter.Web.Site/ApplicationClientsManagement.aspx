@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="ApplicationClientsManagement.aspx.cs" Inherits="Cinema.Web.Site.ControlTicketClient" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="ApplicationClientsManagement.aspx.cs" Inherits="Relax.Web.Site.ApplicationClientsManagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .styled-add-button {

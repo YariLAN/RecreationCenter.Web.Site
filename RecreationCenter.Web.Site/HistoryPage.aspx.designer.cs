@@ -7,11 +7,11 @@
 // </автоматически создаваемое>
 //------------------------------------------------------------------------------
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
 
 
-    public partial class HistoryTicketsPage
+    public partial class HistoryPage
     {
 
         /// <summary>

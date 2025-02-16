@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
     public partial class RegisterPage : System.Web.UI.Page
     {
@@ -59,7 +55,7 @@ namespace Cinema.Web.Site
                 "(ID_Client, Surname, NumberPhone, login, password, IsAdmin, FirstName, Email) " +
              $"VALUES (NEWID(), '{surname}', '{phone}', '{login}', '{password}', '0', '{name}', '{email}')";
 
-            var resultUpdated = SqlUtils.ExecuteNotQuery(insertSQL);                        
+            var resultUpdated = SqlUtils.ExecuteNotQuery(insertSQL);
 
             if (resultUpdated > 0)
             {

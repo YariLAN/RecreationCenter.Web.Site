@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Data.SqlClient;
-using System.Data.SqlTypes;
 using System.Web.UI.WebControls;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
-    public partial class HistoryTicketsPage : System.Web.UI.Page
+    public partial class HistoryPage : System.Web.UI.Page
     {
         private string SQL_BY_CLIENT = @"
             SELECT 
@@ -113,8 +111,8 @@ namespace Cinema.Web.Site
                 var reader = SqlUtils.CleanExecuteReader(sqlApplicationDetails);
                 ApplicationDetails.DataSource = reader;
                 ApplicationDetails.DataBind();
-            });                    
-            
+            });
+
             SqlUtils.CompleteConnect(() =>
             {
                 var reader = SqlUtils.CleanExecuteReader(string.Format(sqlAddServices, value));

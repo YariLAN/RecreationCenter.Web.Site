@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web.UI.WebControls;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
-    public partial class AddTicket : System.Web.UI.Page
+    public partial class PriceListManagement : System.Web.UI.Page
     {
         private string SQL_ALL = @"
             SELECT 
@@ -63,7 +63,7 @@ namespace Cinema.Web.Site
             });
 
             EditPriceCottagePanel.Visible = true;
-        }  
+        }
 
         protected void ServiceGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -93,8 +93,8 @@ namespace Cinema.Web.Site
             if (Session["UserId"] is null) return;
 
             EditPriceCottagePanel.Visible = false;
-        }  
-        
+        }
+
         protected void CancelEdit_Click2(object sender, EventArgs e)
         {
             if (Session["UserId"] is null) return;
@@ -126,7 +126,7 @@ namespace Cinema.Web.Site
                 ErrorLabel.Text = "Ошибка обновления. Попробуйте снова";
                 return;
             }
-        }  
+        }
 
         protected void UpdatePriceServiceBtn_Click(object sender, EventArgs e)
         {
@@ -152,5 +152,5 @@ namespace Cinema.Web.Site
                 return;
             }
         }
-    }                         
+    }
 }

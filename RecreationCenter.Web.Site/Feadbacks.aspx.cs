@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Data.SqlTypes;
 using System.Web.UI.WebControls;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
     public partial class Feadbacks : System.Web.UI.Page
     {

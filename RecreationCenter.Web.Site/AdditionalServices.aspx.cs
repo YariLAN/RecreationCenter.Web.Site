@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
     public partial class AdditionalServices : System.Web.UI.Page
     {
@@ -14,7 +14,7 @@ namespace Cinema.Web.Site
                 Naming
             FROM OtherServices;";
 
-        private readonly SqlConnection connection = 
+        private readonly SqlConnection connection =
             new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {

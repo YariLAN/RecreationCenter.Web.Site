@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="RegisterPage.aspx.cs" Inherits="Cinema.Web.Site.RegisterPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="RegisterPage.aspx.cs" Inherits="Relax.Web.Site.RegisterPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Регистрация пользователя</title>
     <style>
@@ -74,9 +74,9 @@
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="RequiredEmail" runat="server"
-                            ErrorMessage="Неверный формат почты" 
-                            EnableClientScript="False" 
-                            ControlToValidate="EmailBox" 
+                            ErrorMessage="Неверный формат почты"
+                            EnableClientScript="False"
+                            ControlToValidate="EmailBox"
                             CssClass="form-error"
                             ValidationExpression="^\S+@\S+\.\S+$">
                         </asp:RegularExpressionValidator>
@@ -98,9 +98,9 @@
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                            ErrorMessage="Неверный формат мобильного телефона" 
-                            EnableClientScript="False" 
-                            ControlToValidate="PhoneBox" 
+                            ErrorMessage="Неверный формат мобильного телефона"
+                            EnableClientScript="False"
+                            ControlToValidate="PhoneBox"
                             CssClass="form-error"
                             ValidationExpression="^((\+7|)+([0-9]){10})$">
                         </asp:RegularExpressionValidator>
@@ -149,7 +149,7 @@
                         <asp:TextBox BorderColor="Black" TextMode="Password" ID="ConfirmedPassword" runat="server" CssClass="form-input"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:CompareValidator 
+                        <asp:CompareValidator
                             ID="CompareValidatorPassword" runat="server"
                             ErrorMessage="Не совпадают"
                             EnableClientScript="False"
@@ -163,7 +163,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <asp:Button style="margin-top: 15px;" BackColor="White" ForeColor="Black" ID="RegisterBtn" runat="server" 
+                        <asp:Button style="margin-top: 15px;" BackColor="White" ForeColor="Black" ID="RegisterBtn" runat="server"
                             Text="Зарегистрироваться"
                             OnClick="RegisterBtn_Click"/>
                     </td>
@@ -171,6 +171,6 @@
             </table>
             <asp:Label Font-Size="16px" ID="ErrorLabel" CssClass="form-error" runat="server"></asp:Label>
         </div>
-        
+
     </asp:Panel>
 </asp:Content>

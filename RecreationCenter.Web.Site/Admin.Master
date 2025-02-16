@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Cinema.Web.Site.Admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Relax.Web.Site.Admin" %>
 
 <!DOCTYPE html>
 
@@ -95,7 +95,7 @@
         <table class="auto-style1">
             <tr>
                 <td style="text-align:center; background: beige;"" class="auto-style6"><img style="background: beige;" src="IMG/logo.png" /></td>
-                
+
                 <td class="auto-style4"><h3 style="text-align: center">База отдыха "Лесное озеро"</h3></td>
                 <td class="auto-style3">
                     <table class="auto-style5">

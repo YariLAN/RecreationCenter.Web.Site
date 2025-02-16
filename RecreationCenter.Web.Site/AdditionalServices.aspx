@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="AdditionalServices.aspx.cs" Inherits="Cinema.Web.Site.AdditionalServices" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="AdditionalServices.aspx.cs" Inherits="Relax.Web.Site.AdditionalServices" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .form-input {
@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p style="text-align: center;">Дополнительные услуги</p>
     <div style="text-align: center;">
-        
+
         <asp:TextBox BorderColor="Black" TextMode="Number" ID="PriceBox" runat="server" min="1" CssClass="form-input"></asp:TextBox>
         <asp:TextBox BorderColor="Black" TextMode="Number" ID="ToPriceBox" runat="server" min="1" CssClass="form-input"></asp:TextBox>
     </div>
@@ -29,11 +29,11 @@
     </div>
 
     <p style="text-align: center;">
-        <asp:GridView ID="AdditionalServiceGridView" runat="server" 
+        <asp:GridView ID="AdditionalServiceGridView" runat="server"
             HorizontalAlign="Center"
-            CellPadding="8" 
-            BorderWidth="2" 
-            ForeColor="#66ffff" 
+            CellPadding="8"
+            BorderWidth="2"
+            ForeColor="#66ffff"
             BackColor="White"
             AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID_More">
             <Columns>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="Cinema.Web.Site.Test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="Relax.Web.Site.Test" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>База отдыха</title>
         <style>
@@ -20,7 +20,7 @@
         .hero {
             text-align: center;
             padding: 40px 20px;
-            
+
             color: white;
             border-radius: 0 0 15px 15px;
         }

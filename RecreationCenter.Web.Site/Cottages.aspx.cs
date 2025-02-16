@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
 using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
     public partial class Cottages : System.Web.UI.Page
     {
@@ -61,8 +57,8 @@ namespace Cinema.Web.Site
             DropDownList_Type.DataSource = reader_type;
             DropDownList_Type.DataBind();
 
-            connection.Close();                
-            
+            connection.Close();
+
             connection.Open();
 
             SqlCommand cmd_geo = new SqlCommand(SQL_COTTAGE_OPTIONS_GEO, connection);
@@ -89,8 +85,8 @@ namespace Cinema.Web.Site
             CottageGridView.DataBind();
 
             connection.Close();
-        }        
-        
+        }
+
         protected void Date_Check_Type(object sender, EventArgs e)
         {
             var type = DropDownList_Type.SelectedValue;
@@ -102,7 +98,7 @@ namespace Cinema.Web.Site
                 CottageGridView.DataSource = reader;
                 CottageGridView.DataBind();
             });
-        }        
+        }
 
         protected void Date_Check_Geo(object sender, EventArgs e)
         {
@@ -162,7 +158,7 @@ namespace Cinema.Web.Site
         protected void BookingCottage_Click(object sender, EventArgs e)
         {
             FormContainerPanel.Visible = (Session["UserId"] != null);
-        }   
+        }
 
 
         protected void SubmitBooking_Click(object sender, EventArgs e)

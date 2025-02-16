@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="PriceListManagement.aspx.cs" Inherits="Cinema.Web.Site.AddTicket" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="PriceListManagement.aspx.cs" Inherits="Relax.Web.Site.PriceListManagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .styled-add-button {
@@ -11,27 +11,27 @@
             border-radius: 5px; /* Скругленные края */
             transition: 0.3s ease-in-out; /* Анимация при наведении */
         }
-    
+
         .styled-add-button:hover {
             background-color: #45a049; /* Темнее на hover */
         }
-    
+
         .form-container {
             text-align: center;
         }
-    
+
         .form-table {
             margin: 0 auto;
             padding: 10px;
             border-collapse: separate;
             border-spacing: 10px;
         }
-    
+
         .form-label {
             font-weight: bold;
             text-align: right;
         }
-    
+
         .form-input {
             width: 330px;
             padding: 5px;
@@ -45,7 +45,7 @@
             font-style: italic;
             opacity: 1;
         }
-    
+
         .form-error {
             color: #FF3300;
             font-size: 12px;
@@ -61,11 +61,11 @@
 
     <h3 style="text-align: center;">Прайс-лист коттеджей</h3>
     <p style="text-align: center;">
-        <asp:GridView 
-            ID="CottageGridView" runat="server" 
+        <asp:GridView
+            ID="CottageGridView" runat="server"
             HorizontalAlign="Center"
-            CellPadding="8" 
-            BorderWidth="2" 
+            CellPadding="8"
+            BorderWidth="2"
             ForeColor="#996633"
             BackColor="White"
             EditRowStyle-BackColor="#ffccff"
@@ -112,11 +112,11 @@
 
     <h3 style="text-align: center;">Прайс-лист доп. услуг</h3>
     <p style="text-align: center;">
-        <asp:GridView ID="AdditionalServiceGridView" runat="server" 
+        <asp:GridView ID="AdditionalServiceGridView" runat="server"
             HorizontalAlign="Center"
-            CellPadding="8" 
-            BorderWidth="2" 
-            ForeColor="#66ffff" 
+            CellPadding="8"
+            BorderWidth="2"
+            ForeColor="#66ffff"
             BackColor="White"
             AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID_More" OnSelectedIndexChanged="ServiceGridView_SelectedIndexChanged">
             <Columns>

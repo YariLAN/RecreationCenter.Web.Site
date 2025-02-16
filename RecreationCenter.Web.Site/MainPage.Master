@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="Cinema.Web.Site.MainPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="Relax.Web.Site.MainPage" %>
 
 <!DOCTYPE html>
 

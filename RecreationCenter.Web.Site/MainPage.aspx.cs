@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
     public partial class Test : System.Web.UI.Page
     {

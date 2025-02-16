@@ -1,22 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Cottages.aspx.cs" Inherits="Cinema.Web.Site.Cottages" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Cottages.aspx.cs" Inherits="Relax.Web.Site.Cottages" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .form-container {
             text-align: center;
         }
-    
+
         .form-table {
             margin: 0 auto;
             padding: 10px;
             border-collapse: separate;
             border-spacing: 10px;
         }
-    
+
         .form-label {
             font-weight: bold;
             text-align: right;
         }
-    
+
         .form-input {
             width: 330px;
             padding: 5px;
@@ -30,7 +30,7 @@
             font-style: italic;
             opacity: 1;
         }
-    
+
         .form-error {
             color: #FF3300;
             font-size: 12px;
@@ -59,11 +59,11 @@
     <p style="text-align: center;">
 
 
-        <asp:GridView 
-            ID="CottageGridView" runat="server" 
+        <asp:GridView
+            ID="CottageGridView" runat="server"
             HorizontalAlign="Center"
-            CellPadding="8" 
-            BorderWidth="2" 
+            CellPadding="8"
+            BorderWidth="2"
             ForeColor="#996633"
             BackColor="White"
             EditRowStyle-BackColor="#ffccff"
@@ -80,10 +80,10 @@
         </asp:GridView>
     </p>
     <p>
-        <asp:DetailsView ID="CottageDetails" runat="server" 
-            AutoGenerateRows="False" 
-            DataKeyNames="ID_Cotage"  
-            Height="50px" 
+        <asp:DetailsView ID="CottageDetails" runat="server"
+            AutoGenerateRows="False"
+            DataKeyNames="ID_Cotage"
+            Height="50px"
             Width="500px"
             CellPadding="8"
             HorizontalAlign="Center">
@@ -99,8 +99,8 @@
     </p>
     <p style="text-align: center; margin-top: 65px;">
         <asp:Button BackColor="White" ForeColor="Black" ID="BookingCottage" runat="server" Visible="false" Text="Забронировать" OnClick="BookingCottage_Click" ></asp:Button>
-    </p> 
-    
+    </p>
+
     <asp:Panel ID="FormContainerPanel" runat="server" CssClass="form-container" Visible="false">
         <div class="form-table">
            <asp:Label ID="Label1" runat="server" CssClass="form-label">Количество людей</asp:Label>
@@ -114,7 +114,7 @@
 
         <div class="form-table">
             <asp:Label ID="Label3" runat="server" CssClass="form-label">Дата и время заезда</asp:Label>
-            <asp:TextBox TextMode="DateTimeLocal" ID="StartDate" runat="server" CssClass="form-input"></asp:TextBox> 
+            <asp:TextBox TextMode="DateTimeLocal" ID="StartDate" runat="server" CssClass="form-input"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                ErrorMessage="Поле обязательно"
                EnableClientScript="False"
@@ -124,7 +124,7 @@
 
         <div class="form-table">
             <asp:Label ID="Label2" runat="server" CssClass="form-label">Дата и время выезда</asp:Label>
-            <asp:TextBox TextMode="DateTimeLocal" ID="EndDate" runat="server" CssClass="form-input"></asp:TextBox> 
+            <asp:TextBox TextMode="DateTimeLocal" ID="EndDate" runat="server" CssClass="form-input"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                ErrorMessage="Поле обязательно"
                EnableClientScript="False"
@@ -133,7 +133,7 @@
         </div>
 
         <div class="form-table">
-            <asp:Button style="margin-top: 15px;" BackColor="White" ForeColor="Black" ID="SubmitBookingBtn" runat="server" 
+            <asp:Button style="margin-top: 15px;" BackColor="White" ForeColor="Black" ID="SubmitBookingBtn" runat="server"
                 Text="Подтвердить заявку"
                 OnClick="SubmitBooking_Click"/>
         </div>

@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Globalization;
-using System.Reflection;
 using System.Web.UI.WebControls;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
-    public partial class ControlTicketClient : System.Web.UI.Page
+    public partial class ApplicationClientsManagement : System.Web.UI.Page
     {
         private string GET_ALL_ORDERS = @"
             SELECT 

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using System.Net;
 using System.Web.UI;
 
-namespace Cinema.Web.Site
+namespace Relax.Web.Site
 {
     public partial class Profile : System.Web.UI.Page
     {
@@ -67,8 +66,8 @@ namespace Cinema.Web.Site
 
             int resultUpd = SqlUtils.ExecuteNotQuery(updUser);
 
-            ErrorLabel.Text = (resultUpd > 0) 
-                ? "Вы успешно обновили даннные" 
+            ErrorLabel.Text = (resultUpd > 0)
+                ? "Вы успешно обновили даннные"
                 : "Ошибка сохранения. Попробуйте снова";
         }
     }

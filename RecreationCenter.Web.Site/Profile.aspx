@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Cinema.Web.Site.Profile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Relax.Web.Site.Profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Профиль</title>
     <style>
@@ -82,7 +82,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <asp:Button BorderColor="Black" style="margin-top: 15px;" BackColor="White" ForeColor="Black" ID="SaveBtn" runat="server" 
+                <asp:Button BorderColor="Black" style="margin-top: 15px;" BackColor="White" ForeColor="Black" ID="SaveBtn" runat="server"
                     Text="Сохранить" OnClick="SaveBtn_Click" />
             </td>
         </tr>
