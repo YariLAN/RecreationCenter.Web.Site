@@ -1,0 +1,213 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="Cinema.Web.Site.MainPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>База отдыха</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+        <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            /*margin-bottom: 102px;*/
+        }
+        .auto-style2 {
+            height: 608px;
+            width: 29px;
+        }
+        .auto-style3 {
+            height: 258px;
+        }
+        .auto-style4 {
+            height: 258px;
+            width: 1124px;
+        }
+        .auto-style5 {
+            width: 100%;
+        }
+        .placeholder{
+            height: 608px;
+            vertical-align:top
+        }
+        .auto-style6 {
+            height: 258px;
+            width: 29px;
+            object-fit: contain;
+        }
+        .auto-style7 {
+            width: 223px;
+        }
+        *{
+            background-color: #a3b679;
+            color: #32144f;
+            font-family: Verdana;
+        }
+
+        button{
+            border-radius: 50px;
+        }
+            .auto-style8 {
+                width: 258px;
+                height: 253px;
+            }
+            .auto-style9 {
+                width: 84px;
+            }
+            .auto-style11 {
+                width: 84px;
+                height: 29px;
+            }
+            .auto-style12 {
+                width: 252px;
+            }
+            .auto-style13 {
+                width: 223px;
+                height: 30px;
+            }
+            .auto-style14 {
+                height: 30px;
+            }
+
+        .form-error {
+            color: #FF3300;
+            font-size: 12px;
+        }
+
+        .dynamiic_label {
+            width: 135px;
+            display: inline-block;
+        }
+        table th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 100px;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <table class="auto-style1">
+            <tr>
+                <td  style="text-align:center; background: beige;" class="auto-style6"><img  style="background: beige;" src="IMG/logo.png" /></td>
+                
+                <td class="auto-style4"><h3 style="text-align: center">База отдыха "Лесное озеро"</h3></td>
+                <td class="auto-style3">
+                    <table class="auto-style5">
+                        <tr>
+                            <td class="auto-style7">
+                                <asp:Label ID="LoginLabel" runat="server">Логин</asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TextBox1" runat="server" Width="213px" />
+                            </td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredLog" runat="server"
+                                    ErrorMessage="Логин обязателен"
+                                    EnableClientScript="False"
+                                    ControlToValidate="TextBox1"
+                                    Font-Size="14px"
+                                    CssClass="form-error">
+                                </asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style13">
+                                <asp:Label ID="PasswordLabel" runat="server">Пароль</asp:Label>
+                            </td>
+                            <td class="auto-style14">
+                                <asp:TextBox TextMode="Password" ID="TextBox2" runat="server" Width="213px" />
+                            </td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredPassWord" runat="server"
+                                    ErrorMessage="Пароль обязателен"
+                                    EnableClientScript="False"
+                                    Font-Size="14px"
+                                    ControlToValidate="TextBox2"
+                                    CssClass="form-error">
+                                </asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <% if (Session["UserId"] == null)
+                                { %>
+                                <td class="auto-style7">
+                                    <asp:Button ID="Button1" runat="server"  Text="Регистрация" Width="220px" OnClick="RegisterRedirect" />
+                                </td>
+                                <td class="auto-style7">
+                                    <asp:Button ID="Button2" runat="server" Text="Вход" Width="220px" OnClick="LoginBtn_Click" />
+                                </td>
+                            <% } else { %>
+                                <td style="padding-right: 20px;">
+                                  <asp:Label ID="DynamicNameLabel" CssClass="dynamiic_label" runat="server"></asp:Label>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <asp:LinkButton ID="ProfileBtn" runat="server" OnClick="ProfileBtn_Click">Профиль</asp:LinkButton>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <asp:Button ID="Button3" runat="server" Text="Выход" Width="90px" OnClick="ExitBtn_Click"/>
+                            <% } %>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding: 13px;">
+                                <asp:Label ForeColor="Black" Font-Size="18px" style="margin-top: 25px;" ID="LabelMessage" runat="server" />
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2" style="vertical-align: top; text-align: center; margin-right: auto; background: beige;">
+                    <div style="text-align: center">
+                    <table class="auto-style12" style="background: beige; " width="50%" align="center"  >
+                        <tr>
+                            <td style="text-align:center; background: beige;" >
+                                <asp:LinkButton BackColor="Beige" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" >Главная</asp:LinkButton>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;  background: beige;" >
+                                <asp:LinkButton BackColor="Beige" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Коттеджи</asp:LinkButton>
+                            </td>
+                        </tr>                                                                                                    
+                        <tr>
+                            <td border="1" width="50%" style="background: beige;" align="center">
+                                <asp:LinkButton BackColor="Beige" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click"  >Дополнительные услуги</asp:LinkButton>
+                            </td>
+                        </tr>
+                        <% if (Session["UserId"] != null)
+                           { %>
+                            <tr>
+                                <td border="1" width="50%" style=" background: beige;" align="center">
+                                    <asp:LinkButton BackColor="Beige" ID="LinkButton4" runat="server" OnClick="HistoryPageRedirect">Заявки</asp:LinkButton>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </table>
+                 </div>
+                </td>
+                <td class="placeholder" colspan="2">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+
+        </table>
+
+        <footer class="footer" style="text-align: center;">
+            <p>&copy; <%= DateTime.Now.Year %> База отдыха "Лесное озеро". Все права защищены.</p>
+        </footer>
+    </form>
+
+</body>
+</html>
